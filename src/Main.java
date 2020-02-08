@@ -8,55 +8,52 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         BaristaList list = new BaristaList("Hello! What would you like to order?"
-                + "\n Don't hesitate and Enter 1 number to get best Coffee" +
-                "\n Or if you want Chocolate Enter number 2  ");
+        + "\n Don't hesitate and Enter 1 number to get best Coffee" + "\n Or if you want Chocolate Enter number 2  ");
         System.out.println(list.listMenu);
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-
-        int coffee;
-        while (true) {
+            int coffee;
             try {
                 int coffeeNumber = Integer.parseInt(reader.readLine());
                 if (coffeeNumber == 1) {
                     System.out.println("Enter number for coffee you want to choose:");
-                    System.out.println("1 for Latte \n" +
-                            "2 for Cappuccino \n" + "3 for Americano \n");
+                    System.out.println("1 for Latte \n" + "2 for Cappuccino \n" + "3 for Americano \n");
                     coffee = Integer.parseInt(reader.readLine());
+                    final int LATTE_NUM = 1;
+                    final int CAPPUCCINO_NUM = 2;
+                    final int AMERICANO_NUM = 3;
                     switch (coffee) {
-                        case (1):
+                        case LATTE_NUM:
                             Latte latte = new Latte();
                             System.out.println(latte.getDescription() + " " + latte.price() + " tenge");
                             System.out.println("Thank you for choosing our Coffee Hause!");
                             break;
 
-                        case (2):
+                        case CAPPUCCINO_NUM:
                             Cappuccino cappuccino = new Cappuccino();
                             System.out.println(cappuccino.getDescription() + " " + cappuccino.price() + " tenge");
                             System.out.println("Thank you for choosing our Coffee Hause!");
                             break;
 
-                        case (3):
+                        case AMERICANO_NUM:
                             Americano americano = new Americano();
                             System.out.println(americano.getDescription() + " " + americano.price() + " tenge");
                             System.out.println("Thank you for choosing our Coffee Hause!");
                             break;
                         default:
                             System.out.println("Please, try input right number");
-                    }
-                } else if (coffeeNumber == 2) {
+                                    }
+                    } else if (coffeeNumber == 2) {
                             Chocolate chocolate = new Chocolate();
                             System.out.println(chocolate.getDescription() + " " + chocolate.price() + " tenge");
                             System.out.println("Thank you for choosing our Coffee Hause!");
-                            break;
+                           
                     }else {
                     System.out.println("Please, try input right number");
 
                 }
                 }catch (Exception exc) {
                 System.err.println("Please, try input right number");
-            }
-
-            }
+                }
         }
 
     }
