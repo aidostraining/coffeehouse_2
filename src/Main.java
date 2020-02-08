@@ -11,17 +11,17 @@ public class Main {
         + "\n Don't hesitate and Enter 1 number to get best Coffee" + "\n Or if you want Chocolate Enter number 2  ");
         System.out.println(list.listMenu);
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-            int coffee;
+            final int COFFEE;
             try {
                 int coffeeNumber = Integer.parseInt(reader.readLine());
                 if (coffeeNumber == 1) {
                     System.out.println("Enter number for coffee you want to choose:");
                     System.out.println("1 for Latte \n" + "2 for Cappuccino \n" + "3 for Americano \n");
-                    coffee = Integer.parseInt(reader.readLine());
+                    COFFEE = Integer.parseInt(reader.readLine());
                     final int LATTE_NUM = 1;
                     final int CAPPUCCINO_NUM = 2;
                     final int AMERICANO_NUM = 3;
-                    switch (coffee) {
+                    switch (COFFEE) {
                         case LATTE_NUM:
                             Latte latte = new Latte();
                             System.out.println(latte.getDescription() + " " + latte.price() + " tenge");
