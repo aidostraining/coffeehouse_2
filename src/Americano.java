@@ -3,8 +3,9 @@
  * Created by user on 04.02.2020.
  */
 public class Americano extends Beverage {
-    public Americano(){
-        description = "Americano";
+    public String description = "Americano";
+    public String getDescription() {
+        return description;
     }
 
     @Override
