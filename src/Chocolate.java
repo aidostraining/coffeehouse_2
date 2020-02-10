@@ -3,8 +3,9 @@
  * Created by user on 04.02.2020.
  */
 public class Chocolate extends Beverage {
-    public Chocolate(){
-        description = "Chocolate";
+    public String description = "Hot Chocolate";
+    public String getDescription() {
+        return description;
     }
 
     @Override
