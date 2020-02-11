@@ -10,7 +10,7 @@ public class Order {
     public void orderTalk() {
             BaristaList list = new BaristaList("Hello! What would you like to order?"
                     + "\n Don't hesitate and Enter 1 number to get best Coffee" + "\n Or if you want Chocolate Enter number 2  ");
-        System.out.println(list.getMenu);
+        System.out.println(list.listMenu);
         try {
             int coffeeNum = Integer.parseInt(reader.readLine());
             if (coffeeNum == 1) {
