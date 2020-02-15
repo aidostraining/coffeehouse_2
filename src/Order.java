@@ -5,12 +5,11 @@ import java.io.InputStreamReader;
  * Created by user on 10.02.2020.
  */
 public class Order {
-    public int coffee;
-    BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+    private int coffee;
+    private BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
     public void orderTalk() {
-            BaristaList list = new BaristaList("Hello! What would you like to order?"
-                    + "\n Don't hesitate and Enter 1 number to get best Coffee" + "\n Or if you want Chocolate Enter number 2  ");
-        System.out.println(list.listMenu);
+        BaristaList list = new BaristaList();
+        list.baristaGreeting();
         try {
             int coffeeNum = Integer.parseInt(reader.readLine());
             if (coffeeNum == 1) {
@@ -24,20 +23,19 @@ public class Order {
                 switch (coffee) {
                     case LATTE_NUM:
                         Latte latte = new Latte();
-
-                        System.out.println(latte.getDescription() + " " + latte.price() + " tenge");
+                        System.out.println("Your " + latte.getCoffeeName() + ", " + latte.price() + " tenge");
                         System.out.println("Thank you for choosing our Coffee Hause!");
                         break;
 
                     case CAPPUCCINO_NUM:
                         Cappuccino cappuccino = new Cappuccino();
-                        System.out.println(cappuccino.getDescription() + " " + cappuccino.price() + " tenge");
+                        System.out.println("Your " + cappuccino.getCoffeeName() + ", " + cappuccino.price() + " tenge");
                         System.out.println("Thank you for choosing our Coffee Hause!");
                         break;
 
                     case AMERICANO_NUM:
                         Americano americano = new Americano();
-                        System.out.println(americano.getDescription() + " " + americano.price() + " tenge");
+                        System.out.println("Your " + americano.getCoffeeName() + ", " + americano.price() + " tenge");
                         System.out.println("Thank you for choosing our Coffee Hause!");
                         break;
                     default:
@@ -46,13 +44,13 @@ public class Order {
             }
             else if (coffeeNum == 2) {
                 Chocolate chocolate = new Chocolate();
-                System.out.println(chocolate.getDescription() + " " + chocolate.price() + " tenge");
+                System.out.println("Your " + chocolate.getCoffeeName() + ", " + chocolate.price() + " tenge");
                 System.out.println("Thank you for choosing our Coffee Hause!");
             }
             else {
                 System.out.println("Please, try input right number");
             }
-        }catch (Exception exc) {
+        }catch (Exception e) {
             System.err.println("Please, try input right number");
         }
     }
