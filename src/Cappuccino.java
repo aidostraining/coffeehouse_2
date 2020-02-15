@@ -3,9 +3,9 @@
  * Created by user on 04.02.2020.
  */
 public class Cappuccino extends Beverage {
-    public String description = "Cappuccino";
-    public String getDescription() {
-        return description;
+    private String coffeeName = "Cappuccino";
+    public String getCoffeeName() {
+        return coffeeName;
     }
 
     @Override
