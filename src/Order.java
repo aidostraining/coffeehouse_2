@@ -10,8 +10,10 @@ public class Order {
     Americano americano = new Americano();
     Chocolate chocolate = new Chocolate();
     private int coffee;
+    final int LATTE_NUM = 1;
+    final int CAPPUCCINO_NUM = 2;
+    final int AMERICANO_NUM = 3;
     private BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-
     public void orderTalk() {
         BaristaList list = new BaristaList();
         list.baristaGreeting();
@@ -22,9 +24,6 @@ public class Order {
                 System.out.println("1 for Latte \n" +
                         "2 for Cappuccino \n" + "3 for Americano \n");
                 coffee = Integer.parseInt(reader.readLine());
-                final int LATTE_NUM = 1;
-                final int CAPPUCCINO_NUM = 2;
-                final int AMERICANO_NUM = 3;
                 switch (coffee) {
                     case LATTE_NUM:
                         latte.speakOut();
